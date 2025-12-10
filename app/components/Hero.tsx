@@ -179,7 +179,7 @@ export default function Hero() {
             Ver proyectos
           </a>
           <a
-            href="/Carlos_Javier_GM_CV.pdf"
+            href="/devcarlosGM-portfolio/Carlos_Javier_GM_CV.pdf"
             className="relative border-2 border-violet-500 hover:bg-violet-500/20 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-[0_0_8px_rgba(139,92,246,0.2)] hover:shadow-[0_0_15px_rgba(139,92,246,0.4)]"
           >
             Descargar CV

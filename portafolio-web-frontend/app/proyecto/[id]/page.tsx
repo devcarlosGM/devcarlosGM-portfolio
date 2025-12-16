@@ -1,4 +1,4 @@
-import { projectsData } from '@/data/projects';
+import { projectsData } from '../../../data/projects';
 import Image from 'next/image';
 import Link from 'next/link';
 import DownloadButton from './DownloadButton';

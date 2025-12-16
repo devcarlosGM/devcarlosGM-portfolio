@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react';
 import Image from 'next/image';
-import { projectsData } from '@/data/projects';
+import { projectsData } from '../../data/projects';
 
 export default function Projects() {
   const [currentIndex, setCurrentIndex] = useState(0);

@@ -96,12 +96,9 @@ export default function Hero() {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden bg-black">
-      {/* Sutil degradado morado desde arriba */}
       <div className="absolute inset-0 bg-gradient-to-b from-purple-950/30 via-black to-black" style={{ zIndex: 1 }} />
       
-      {/* Floating particles overlay - POSICIONES RANDOM */}
       <div className="absolute inset-0 overflow-hidden" style={{ zIndex: 3 }}>
-        {/* Floating particles layer 1 */}
         <div className="particles-container">
           {particlePositions.layer1.map((pos, i) => (
             <div
@@ -116,7 +113,6 @@ export default function Hero() {
             />
           ))}
         </div>
-        {/* Floating particles layer 2 (slower, larger) */}
         <div className="particles-container-slow">
           {particlePositions.layer2.map((pos, i) => (
             <div
@@ -131,7 +127,6 @@ export default function Hero() {
             />
           ))}
         </div>
-        {/* Floating particles layer 3 (muy lentas, extra grandes) */}
         <div className="particles-container-slow">
           {particlePositions.layer3.map((pos, i) => (
             <div
@@ -150,44 +145,42 @@ export default function Hero() {
         </div>
       </div>
       
-      {/* Gradient overlay for better text readability */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40" style={{ zIndex: 5 }} />
       
-      <div className={`max-w-5xl w-full mx-auto flex flex-col items-center text-center space-y-6 relative transition-all duration-1000 ${
+      <div className={`max-w-5xl w-full mx-auto flex flex-col items-center text-center space-y-4 sm:space-y-6 px-4 relative transition-all duration-1000 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
       }`} style={{ zIndex: 10 }}>
-        <div className="flex flex-col items-center space-y-4">
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight animate-fade-in-up">
+        <div className="flex flex-col items-center space-y-3 sm:space-y-4">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight animate-fade-in-up">
             <span className="bg-gradient-to-r from-violet-400 via-purple-400 to-violet-500 bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(139,92,246,0.2)]">
               Carlos Javier Gayosso Martinez
             </span>
           </h1>
-          <div className="text-2xl md:text-4xl font-semibold text-violet-400 min-h-[3rem] flex items-center animate-fade-in-up animation-delay-200">
+          <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-violet-400 min-h-[2.5rem] sm:min-h-[3rem] flex items-center justify-center animate-fade-in-up animation-delay-200">
             {displayedText.substring(fullName.length)}
-            <span className="inline-block w-0.5 h-8 md:h-10 bg-violet-500 ml-1 animate-cursor-blink shadow-[0_0_8px_rgba(139,92,246,0.4)]"></span>
+            <span className="inline-block w-0.5 h-6 sm:h-8 md:h-10 bg-violet-500 ml-1 animate-cursor-blink shadow-[0_0_8px_rgba(139,92,246,0.4)]"></span>
           </div>
         </div>
         
-        <p className="text-lg text-gray-400 max-w-2xl animate-fade-in-up animation-delay-300">
+        <p className="text-sm sm:text-base lg:text-lg text-gray-400 max-w-xl lg:max-w-2xl animate-fade-in-up animation-delay-300 px-4">
             Full Stack en formación. Enfocado en Python, JavaScript y soluciones web.</p>
         
-        <div className="flex flex-wrap gap-4 pt-6 justify-center animate-fade-in-up animation-delay-400">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 sm:pt-6 w-full sm:w-auto justify-center animate-fade-in-up animation-delay-400">
           <a
             href="#proyectos"
-            className="relative border-2 border-violet-500 hover:bg-violet-500/20 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-[0_0_8px_rgba(139,92,246,0.2)] hover:shadow-[0_0_15px_rgba(139,92,246,0.4)]"
+            className="relative border-2 border-violet-500 hover:bg-violet-500/20 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-[0_0_8px_rgba(139,92,246,0.2)] hover:shadow-[0_0_15px_rgba(139,92,246,0.4)] text-sm sm:text-base"
           >
             Ver proyectos
           </a>
           <a
             href="/devcarlosGM-portfolio/Carlos_Javier_GM_CV.pdf"
-            className="relative border-2 border-violet-500 hover:bg-violet-500/20 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-[0_0_8px_rgba(139,92,246,0.2)] hover:shadow-[0_0_15px_rgba(139,92,246,0.4)]"
+            className="relative border-2 border-violet-500 hover:bg-violet-500/20 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-[0_0_8px_rgba(139,92,246,0.2)] hover:shadow-[0_0_15px_rgba(139,92,246,0.4)] text-sm sm:text-base"
           >
             Descargar CV
           </a>
         </div>
         
-        {/* Robot SVG Animado - Más pequeño y al final */}
-        <div className="mt-8 animate-fade-in-up animation-delay-600">
+        <div className="mt-6 sm:mt-8 scale-75 sm:scale-100 animate-fade-in-up animation-delay-600">
           <RobotSVG />
         </div>
       </div>

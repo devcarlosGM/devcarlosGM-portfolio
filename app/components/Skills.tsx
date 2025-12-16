@@ -36,20 +36,20 @@ export default function Skills() {
   ];
 
   return (
-    <section className="py-16 px-6 flex items-center justify-center min-h-[60vh] bg-black relative">
+    <section id="habilidades" className="py-12 sm:py-16 px-4 sm:px-6 flex items-center justify-center min-h-[50vh] sm:min-h-[60vh] bg-black relative">
       <div className="max-w-6xl w-full mx-auto flex flex-col items-center relative z-10">
-        <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-violet-400 to-purple-500 bg-clip-text text-transparent mb-12 text-center animate-fade-in drop-shadow-[0_0_8px_rgba(139,92,246,0.15)]">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-violet-400 to-purple-500 bg-clip-text text-transparent mb-8 sm:mb-12 text-center animate-fade-in drop-shadow-[0_0_8px_rgba(139,92,246,0.15)]">
           Habilidades Principales
         </h2>
-        <div className="w-full flex flex-col md:flex-row justify-center items-center gap-6">
+        <div className="w-full flex flex-col sm:flex-row justify-center items-stretch gap-4 sm:gap-6">
           {skills.map((skill, index) => (
             <div
               key={index}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
-              className={`relative bg-black border rounded-xl p-6 flex-1 min-w-[220px] max-w-[300px] flex flex-col items-center transition-all duration-500 animate-fade-in-up cursor-pointer overflow-hidden ${
+              className={`relative bg-black border rounded-xl p-4 sm:p-6 flex-1 min-w-[200px] sm:min-w-[220px] max-w-[300px] mx-auto sm:mx-0 w-full flex flex-col items-center transition-all duration-500 animate-fade-in-up cursor-pointer overflow-hidden ${
                 hoveredIndex === index 
-                  ? 'border-violet-500 scale-110 shadow-[0_0_15px_rgba(139,92,246,0.3)] -translate-y-2' 
+                  ? 'border-violet-500 sm:scale-110 shadow-[0_0_15px_rgba(139,92,246,0.3)] sm:-translate-y-2' 
                   : 'border-violet-900/30 hover:border-violet-500/50 shadow-[0_0_5px_rgba(139,92,246,0.05)]'
               }`}
               style={{ animationDelay: `${index * 150}ms` }}
@@ -57,16 +57,16 @@ export default function Skills() {
               {hoveredIndex === index && (
                 <div className="absolute inset-0 bg-gradient-to-br from-violet-600/10 to-purple-600/10 animate-pulse"></div>
               )}
-              <div className="flex flex-col items-center space-y-4 w-full relative z-10">
-                <div className={`text-4xl mb-2 transition-all duration-500 ${
+              <div className="flex flex-col items-center space-y-3 sm:space-y-4 w-full relative z-10">
+                <div className={`text-3xl sm:text-4xl mb-2 transition-all duration-500 ${
                   hoveredIndex === index ? 'scale-125 rotate-12 drop-shadow-[0_0_10px_rgba(139,92,246,0.4)]' : ''
                 }`}>{skill.icon}</div>
-                <h3 className="text-lg font-semibold text-white mb-2 text-center">
+                <h3 className="text-base sm:text-lg font-semibold text-white mb-2 text-center">
                   {skill.title}
                 </h3>
-                <div className="space-y-2 w-full flex flex-col items-center">
+                <div className="space-y-1.5 sm:space-y-2 w-full flex flex-col items-center">
                   {skill.items.map((item, i) => (
-                    <p key={i} className={`text-sm text-center w-full transition-all duration-300 ${
+                    <p key={i} className={`text-xs sm:text-sm text-center w-full transition-all duration-300 ${
                       hoveredIndex === index ? 'text-violet-300' : 'text-gray-500'
                     }`}>
                       {item}

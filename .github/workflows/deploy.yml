@@ -22,20 +22,23 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
+          cache-dependency-path: 'portafolio-web-frontend/package-lock.json'
 
       - name: Install dependencies
+        working-directory: ./portafolio-web-frontend
         run: npm ci
 
       - name: Build Next.js
+        working-directory: ./portafolio-web-frontend
         run: npm run build
 
       - name: Add .nojekyll file
-        run: touch out/.nojekyll
+        run: touch portafolio-web-frontend/out/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
+          path: ./portafolio-web-frontend/out
 
   deploy:
     environment:

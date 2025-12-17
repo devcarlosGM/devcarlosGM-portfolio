@@ -3,6 +3,7 @@
 import { useState, useMemo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { withBasePath } from '@/app/lib/paths';
 import { projectsData } from '../../data/projects';
 
 export default function Projects() {
@@ -25,9 +26,9 @@ export default function Projects() {
     id: project.id,
     title: project.title,
     description: project.shortDescription,
-    image: project.image,
+    image: project.image ? withBasePath(project.image) : undefined,
     tags: project.tags,
-    link: `/proyecto/${project.id}/`
+    link: `/proyecto/${project.id}`
   }));
 
   const nextSlide = () => {

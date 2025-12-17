@@ -29,7 +29,7 @@ export const projectsData: ProjectData[] = [
     title: 'NoteTify - Asistente de Productividad IA',
     shortDescription: 'Ganador del 1er Lugar - Feria de Prototipos UTP 2025. Aplicación móvil con integración de Gemini AI, comandos de voz y sincronización en tiempo real.',
     fullDescription: 'App móvil que combina IA con productividad personal. Gestiona notas, tareas y recordatorios mediante comandos de voz procesados por Gemini AI. Sincronización en tiempo real y sugerencias inteligentes.',
-    image: '/Chat_IA_notetify.jpg',
+    image: 'Chat_IA_notetify.jpg',
     tags: ['React Native', 'Expo', 'Firebase', 'Gemini AI', 'TypeScript'],
     technologies: [
       'React Native + Expo',
@@ -53,12 +53,12 @@ export const projectsData: ProjectData[] = [
       'Búsqueda semántica'
     ],
     screenshots: [
-      '/Screenshot_1765901255.png',
-      '/Screenshot_1765901330.png',
-      '/Screenshot_1765901287.png'
+      'Screenshot_1765901255.png',
+      'Screenshot_1765901330.png',
+      'Screenshot_1765901287.png'
     ],
-    demoUrl: '/NoteTify.apk',
-    apkUrl: '/NoteTify.apk',
+    demoUrl: 'NoteTify.apk',
+    apkUrl: 'NoteTify.apk',
     githubUrl: 'https://github.com/devcarlosGM/notetify',
     award: '1er Lugar - Feria de Prototipos UTP 2025',
     timeline: 'Septiembre 2025 - Diciembre 2025',
@@ -69,7 +69,7 @@ export const projectsData: ProjectData[] = [
     title: 'Django E-commerce - Tienda en Línea',
     shortDescription: 'Tienda en línea completa con autenticación, carrito de compras, gestión de inventario y flujos de pago. Proyecto académico de la UTP.',
     fullDescription: 'Plataforma de comercio electrónico desarrollada con Django como proyecto de la licenciatura en Tecnologías de la Información. Implementa un sistema de tienda en línea completo con autenticación de usuarios, operaciones CRUD, carrito de compras persistente, gestión de inventario y front-end desarrollado con una tienda en línea de calzado. El proyecto incluye integración con bases de datos relacionales (SQLite) y operaciones CRUD completas.',
-    image: '/window.svg',
+    image: 'window.svg',
     tags: ['Python', 'Django', 'SQLite', 'CRUD'],
     technologies: [
       'Python con Django Framework',
@@ -99,9 +99,9 @@ export const projectsData: ProjectData[] = [
       'Validación de formularios y manejo de errores'
     ],
     screenshots: [
-      '/window.svg',
-      '/window.svg',
-      '/window.svg'
+      'window.svg',
+      'window.svg',
+      'window.svg'
     ],
     githubUrl: 'https://github.com/devcarlosGM/django-ecommerce',
     timeline: 'Septiembre 2022 - Agosto 2024 (Proyecto Académico UTP)',
@@ -112,7 +112,7 @@ export const projectsData: ProjectData[] = [
     title: 'BomberBlox 3D',
     shortDescription: 'Juego multijugador inspirado en Bomberman con generación procedimental de mapas y sistemas multi-arena.',
     fullDescription: 'BomberBlox 3D es una reinvención moderna del clásico Bomberman, desarrollado en Roblox Studio. Combina mecánicas de juego tradicionales con generación procedimental de mapas, sistema multijugador robusto y gráficos 3D optimizados. El juego incluye múltiples arenas, power-ups únicos y un sistema de progresión para mantener a los jugadores comprometidos.',
-    image: '/globe.svg',
+    image: 'globe.svg',
     tags: ['Lua', 'Roblox Studio', 'Blender'],
     technologies: [
       'Roblox Studio',
@@ -138,9 +138,9 @@ export const projectsData: ProjectData[] = [
       'Sistema de logros'
     ],
     screenshots: [
-      '/globe.svg',
-      '/globe.svg',
-      '/globe.svg'
+      'globe.svg',
+      'globe.svg',
+      'globe.svg'
     ],
     demoUrl: 'https://www.roblox.com/games/bomberblox',
     timeline: 'Agosto 2024 - Abril 2026 (Proyecto Actual de Ingeniería)',

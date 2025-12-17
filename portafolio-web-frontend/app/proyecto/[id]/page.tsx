@@ -1,6 +1,7 @@
 import { projectsData } from '../../../data/projects';
 import Image from 'next/image';
 import Link from 'next/link';
+import { withBasePath } from '@/app/lib/paths';
 import DownloadButton from './DownloadButton';
 
 export function generateStaticParams() {
@@ -12,7 +13,7 @@ export function generateStaticParams() {
 export default async function ProjectDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id: projectId } = await params;
 
-  const project = projectsData.find(p => p.id === projectId);
+    const project = projectsData.find(p => p.id === projectId);
 
   if (!project) {
     return (
@@ -30,7 +31,10 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
     );
   }
 
-  if (project.id === 'notetify') {
+    if (project.id === 'notetify') {
+        const screenshots = project.screenshots.map(src => withBasePath(src));
+        const demoHref = project.demoUrl ? withBasePath(project.demoUrl) : undefined;
+
     return (
       <div className="min-h-screen bg-black text-white font-sans selection:bg-violet-500/30">
         <div className="fixed inset-0 pointer-events-none">
@@ -71,7 +75,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                     {project.shortDescription}
                 </p>
                 
-                {project.demoUrl && <DownloadButton href={project.demoUrl} />}
+                {demoHref && <DownloadButton href={demoHref} />}
             </section>
 
             <section className="relative" style={{marginTop: '120px', marginBottom: '120px', paddingTop: '100px', paddingBottom: '100px'}}>
@@ -79,20 +83,20 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 <div className="flex justify-center items-center gap-8 md:gap-16 perspective-1000">
                     <div className="relative w-48 h-[24rem] md:w-64 md:h-[34rem] transform rotate-y-12 translate-y-12 opacity-80 hover:opacity-100 transition-all duration-500 hover:z-20 hover:scale-[1.02] hover:rotate-y-0 hover:translate-y-0">
                          <div className="absolute inset-0 bg-black rounded-[2.5rem] border-[3px] border-gray-800 overflow-hidden shadow-2xl">
-                            <Image src={project.screenshots[0]} alt="Screen 1" fill className="object-cover" unoptimized quality={100} style={{imageRendering: 'crisp-edges'}} />
+                            <Image src={screenshots[0]} alt="Screen 1" fill className="object-cover" unoptimized quality={100} style={{imageRendering: 'crisp-edges'}} />
                          </div>
                     </div>
                     
                     <div className="relative w-56 h-[28rem] md:w-72 md:h-[38rem] z-10 transform hover:scale-[1.02] transition-all duration-500 shadow-2xl">
                         <div className="absolute inset-0 bg-black rounded-[3rem] border-[4px] border-gray-700 overflow-hidden shadow-violet-500/20 shadow-2xl">
                             <div className="absolute top-4 left-1/2 -translate-x-1/2 w-24 h-7 bg-black rounded-full z-20 border border-gray-800" />
-                            <Image src={project.screenshots[1]} alt="Screen 2" fill className="object-cover" unoptimized priority quality={100} style={{imageRendering: 'crisp-edges'}} />
+                            <Image src={screenshots[1]} alt="Screen 2" fill className="object-cover" unoptimized priority quality={100} style={{imageRendering: 'crisp-edges'}} />
                         </div>
                     </div>
 
                     <div className="relative w-48 h-[24rem] md:w-64 md:h-[34rem] transform -rotate-y-12 translate-y-12 opacity-80 hover:opacity-100 transition-all duration-500 hover:z-20 hover:scale-[1.02] hover:rotate-y-0 hover:translate-y-0">
                          <div className="absolute inset-0 bg-black rounded-[2.5rem] border-[3px] border-gray-800 overflow-hidden shadow-2xl">
-                            <Image src={project.screenshots[2]} alt="Screen 3" fill className="object-cover" unoptimized quality={100} style={{imageRendering: 'crisp-edges'}} />
+                            <Image src={screenshots[2]} alt="Screen 3" fill className="object-cover" unoptimized quality={100} style={{imageRendering: 'crisp-edges'}} />
                          </div>
                     </div>
                 </div>

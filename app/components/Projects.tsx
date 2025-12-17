@@ -20,6 +20,8 @@ export default function Projects() {
       layer3: Array.from({ length: 20 }, (_, i) => getRandomPosition(i + 200))
     };
   }, []);
+
+  const basePath = process.env.NODE_ENV === 'production' ? '/devcarlosGM-portfolio' : '';
   
   const projects = projectsData.map(project => ({
     id: project.id,
@@ -27,7 +29,7 @@ export default function Projects() {
     description: project.shortDescription,
     image: project.image,
     tags: project.tags,
-    link: `/proyecto/${project.id}`
+    link: `${basePath}/proyecto/${project.id}`
   }));
 
   const nextSlide = () => {

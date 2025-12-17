@@ -4,6 +4,14 @@ import { useState, useMemo } from 'react';
 import Image from 'next/image';
 import { projectsData } from '../../data/projects';
 
+const configuredBasePath =
+  process.env.NEXT_PUBLIC_BASE_PATH ??
+  (process.env.NODE_ENV === 'production' ? '/devcarlosGM-portfolio' : '');
+
+const normalizedBasePath = configuredBasePath
+  ? `/${configuredBasePath.replace(/^\/+/g, '').replace(/\/+$/g, '')}`
+  : '';
+
 export default function Projects() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -26,7 +34,7 @@ export default function Projects() {
     description: project.shortDescription,
     image: project.image,
     tags: project.tags,
-    link: `/proyecto/${project.id}`
+    link: `${normalizedBasePath}/proyecto/${project.id}/`
   }));
 
   const nextSlide = () => {

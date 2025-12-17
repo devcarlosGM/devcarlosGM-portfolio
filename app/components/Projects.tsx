@@ -110,7 +110,7 @@ export default function Projects() {
                 {projects.map((project, index) => (
                   <div key={index} className="min-w-full px-2 sm:px-4">
                     <div className="bg-black border border-violet-900/30 rounded-xl overflow-hidden hover:border-violet-500 hover:shadow-[0_0_15px_rgba(139,92,246,0.2)] transition-all duration-300 w-full group">
-                      <Link href={project.link} className="block h-full">
+                      <a href={project.link} className="block h-full">
 
                         {project.image && (
                           <div className="relative h-40 sm:h-48 md:h-56 bg-gradient-to-br from-violet-950 to-black overflow-hidden">
@@ -146,7 +146,7 @@ export default function Projects() {
                           </span>
                         </div>
 
-                      </Link>
+                      </a>
                     </div>
                   </div>
                 ))}

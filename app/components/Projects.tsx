@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { projectsData } from '../../data/projects';
 
 export default function Projects() {
@@ -19,8 +20,6 @@ export default function Projects() {
       layer3: Array.from({ length: 20 }, (_, i) => getRandomPosition(i + 200))
     };
   }, []);
-
-  const basePath = process.env.NODE_ENV === 'production' ? '/devcarlosGM-portfolio' : '';
   
   const projects = projectsData.map(project => ({
     id: project.id,
@@ -28,7 +27,7 @@ export default function Projects() {
     description: project.shortDescription,
     image: project.image,
     tags: project.tags,
-    link: `${basePath}/proyecto/${project.id}`
+    link: `/proyecto/${project.id}`
   }));
 
   const nextSlide = () => {
@@ -109,7 +108,7 @@ export default function Projects() {
                 {projects.map((project, index) => (
                   <div key={index} className="min-w-full px-2 sm:px-4">
                     <div className="bg-black border border-violet-900/30 rounded-xl overflow-hidden hover:border-violet-500 hover:shadow-[0_0_15px_rgba(139,92,246,0.2)] transition-all duration-300 w-full group">
-                      <a href={project.link} className="block h-full">
+                      <Link href={project.link} className="block h-full">
 
                         {project.image && (
                           <div className="relative h-40 sm:h-48 md:h-56 bg-gradient-to-br from-violet-950 to-black overflow-hidden">
@@ -145,7 +144,7 @@ export default function Projects() {
                           </span>
                         </div>
 
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 ))}

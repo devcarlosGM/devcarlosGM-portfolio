@@ -2,15 +2,8 @@
 
 import { useState, useMemo } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { projectsData } from '../../data/projects';
-
-const configuredBasePath =
-  process.env.NEXT_PUBLIC_BASE_PATH ??
-  (process.env.NODE_ENV === 'production' ? '/devcarlosGM-portfolio' : '');
-
-const normalizedBasePath = configuredBasePath
-  ? `/${configuredBasePath.replace(/^\/+/g, '').replace(/\/+$/g, '')}`
-  : '';
 
 export default function Projects() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -34,7 +27,7 @@ export default function Projects() {
     description: project.shortDescription,
     image: project.image,
     tags: project.tags,
-    link: `${normalizedBasePath}/proyecto/${project.id}/`
+    link: `/proyecto/${project.id}/`
   }));
 
   const nextSlide = () => {
@@ -115,9 +108,22 @@ export default function Projects() {
                 {projects.map((project, index) => (
                   <div key={index} className="min-w-full px-2 sm:px-4">
                     <div className="bg-black border border-violet-900/30 rounded-xl overflow-hidden hover:border-violet-500 hover:shadow-[0_0_15px_rgba(139,92,246,0.2)] transition-all duration-300 w-full group">
-                      <a href={project.link} className="block h-full">
+                      <Link href={project.link} className="block h-full">
 
-                        {project.image && (
+                        {project.image ? (
+                          <div className="relative h-40 sm:h-48 md:h-56 bg-black overflow-hidden">
+                            <Image
+                              src={project.image}
+                              alt={`Vista previa de ${project.title}`}
+                              fill
+                              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 60vw, 32rem"
+                              className="object-cover transition-transform duration-500 group-hover:scale-105"
+                              unoptimized
+                              priority={index === currentIndex}
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                          </div>
+                        ) : (
                           <div className="relative h-40 sm:h-48 md:h-56 bg-gradient-to-br from-violet-950 to-black overflow-hidden">
                             <div className="absolute inset-0 flex items-center justify-center text-gray-600 group-hover:scale-105 transition-transform duration-500">
                               <svg className="w-12 h-12 sm:w-16 sm:h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -151,7 +157,7 @@ export default function Projects() {
                           </span>
                         </div>
 
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 ))}

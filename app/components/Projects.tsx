@@ -27,7 +27,7 @@ export default function Projects() {
     description: project.shortDescription,
     image: project.image,
     tags: project.tags,
-    link: `/devcarlosGM-portfolio/proyecto/${project.id}`
+    link: `/proyecto/${project.id}`
   }));
 
   const nextSlide = () => {

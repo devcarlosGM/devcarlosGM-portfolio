@@ -15,20 +15,17 @@ declare global {
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false);
   const [displayedText, setDisplayedText] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [roleIndex, setRoleIndex] = useState(0);
   const [lottieLoaded, setLottieLoaded] = useState(false);
   
-  const fullName = 'Carlos Javier Gayosso Martinez';
   const roles = [
-    'Software Developer',
-    'Full-Stack Developer', 
-    'Mobile Developer',
+    'Software',
+    'Full-Stack', 
+    'Mobile',
     'Problem Solver'
   ];
 
-  
   const particlePositions = useMemo(() => {
     const getRandomPosition = (seed: number) => ({
       left: Math.abs(Math.sin(seed * 12.9898 + 78.233) * 43758.5453) % 100,
@@ -54,36 +51,20 @@ export default function Hero() {
     }
   }, []);
 
-  
-  // Typing effect for name
-  useEffect(() => {
-    if (currentIndex < fullName.length) {
-      const timeout = setTimeout(() => {
-        setDisplayedText(prev => prev + fullName[currentIndex]);
-        setCurrentIndex(prev => prev + 1);
-      }, 100);
-      return () => clearTimeout(timeout);
-    }
-  }, [currentIndex]);
-
   // Typing effect for roles
   useEffect(() => {
     const currentRole = roles[roleIndex];
     
-    if (!isDeleting && displayedText.length < fullName.length) {
-      return;
-    }
-
     const timeout = setTimeout(() => {
       if (!isDeleting) {
-        if (displayedText.length < fullName.length + currentRole.length) {
-          setDisplayedText(prev => prev + currentRole[displayedText.length - fullName.length]);
+        if (displayedText.length < currentRole.length) {
+          setDisplayedText(currentRole.slice(0, displayedText.length + 1));
         } else {
           setTimeout(() => setIsDeleting(true), 2000);
         }
       } else {
-        if (displayedText.length > fullName.length) {
-          setDisplayedText(prev => prev.slice(0, -1));
+        if (displayedText.length > 0) {
+          setDisplayedText(currentRole.slice(0, displayedText.length - 1));
         } else {
           setIsDeleting(false);
           setRoleIndex((prev) => (prev + 1) % roles.length);
@@ -93,6 +74,8 @@ export default function Hero() {
 
     return () => clearTimeout(timeout);
   }, [displayedText, isDeleting, roleIndex]);
+
+  const isProblemSolver = roles[roleIndex] === 'Problem Solver';
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden bg-black">
@@ -157,7 +140,10 @@ export default function Hero() {
             </span>
           </h1>
           <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-violet-400 min-h-[2.5rem] sm:min-h-[3rem] flex items-center justify-center animate-fade-in-up animation-delay-200">
-            {displayedText.substring(fullName.length)}
+            {!isProblemSolver && (
+              <span className="mr-4">Developer&nbsp;</span>
+            )}
+            <span>{displayedText}</span>
             <span className="inline-block w-0.5 h-6 sm:h-8 md:h-10 bg-violet-500 ml-1 animate-cursor-blink shadow-[0_0_8px_rgba(139,92,246,0.4)]"></span>
           </div>
         </div>
@@ -173,7 +159,7 @@ export default function Hero() {
             Ver proyectos
           </a>
           <a
-            href="/Carlos_Javier_GM_CV.pdf"
+            href="/devcarlosGM-portfolio/Carlos_Javier_GM_CV.pdf"
             className="relative border-2 border-violet-500 hover:bg-violet-500/20 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-[0_0_8px_rgba(139,92,246,0.2)] hover:shadow-[0_0_15px_rgba(139,92,246,0.4)] text-sm sm:text-base"
           >
             Descargar CV

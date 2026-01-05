@@ -138,10 +138,6 @@ export default function Projects() {
                               </span>
                             ))}
                           </div>
-
-                          <span className="inline-block border-2 border-violet-500 group-hover:bg-violet-500/20 text-white px-4 sm:px-5 py-1.5 sm:py-2 rounded-lg font-medium transition-all duration-300 group-hover:scale-105 shadow-[0_0_8px_rgba(139,92,246,0.2)] group-hover:shadow-[0_0_15px_rgba(139,92,246,0.4)] text-xs sm:text-sm md:text-base">
-                            Ver más
-                          </span>
                         </div>
 
                       </a>

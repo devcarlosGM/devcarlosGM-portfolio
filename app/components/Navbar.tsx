@@ -26,7 +26,7 @@ export default function Navbar() {
         <Link href="/" className="font-bold text-lg sm:text-xl tracking-tight text-white hover:text-violet-300 transition-colors duration-300">
           Carlos Gayosso<span className="text-violet-500"></span>
         </Link>
-          
+
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
             <Link href="#home" className="text-sm font-medium text-gray-300 hover:text-white transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(139,92,246,0.5)]">
@@ -43,7 +43,7 @@ export default function Navbar() {
             </Link>
           </div>
 
- 
+
           <button
             onClick={toggleMenu}
             className="md:hidden text-gray-300 hover:text-white transition-colors p-2"
@@ -64,29 +64,29 @@ export default function Navbar() {
 
       {isMenuOpen && (
         <div className="md:hidden w-full max-w-5xl bg-black/40 backdrop-blur-xl border border-white/10 rounded-3xl p-4 flex flex-col gap-2 shadow-2xl animate-in slide-in-from-top-2 fade-in duration-200">
-            <Link 
-              href="#home" 
+            <Link
+              href="#home"
               onClick={closeMenu}
               className="text-gray-300 hover:text-white hover:bg-white/5 transition-all duration-300 py-3 px-6 rounded-xl font-medium"
             >
               Inicio
             </Link>
-            <Link 
-              href="#proyectos" 
+            <Link
+              href="#proyectos"
               onClick={closeMenu}
               className="text-gray-300 hover:text-white hover:bg-white/5 transition-all duration-300 py-3 px-6 rounded-xl font-medium"
             >
               Proyectos
             </Link>
-            <Link 
-              href="#sobre-mi" 
+            <Link
+              href="#sobre-mi"
               onClick={closeMenu}
               className="text-gray-300 hover:text-white hover:bg-white/5 transition-all duration-300 py-3 px-6 rounded-xl font-medium"
             >
               Sobre mi
             </Link>
-            <Link 
-              href="#contacto" 
+            <Link
+              href="#contacto"
               onClick={closeMenu}
               className="text-gray-300 hover:text-white hover:bg-white/5 transition-all duration-300 py-3 px-6 rounded-xl font-medium"
             >

@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer id="contacto" className="bg-black border-t border-violet-900/30 py-6 sm:py-8 shadow-[0_-10px_30px_rgba(139,92,246,0.05)] relative">
+    <footer id="contacto" className="bg-black border-t border-violet-900/30 py-6 sm:py-8 shadow-[0_-10px_30px_rgba(139,92,246,0.05)] relative flex justify-center">
       <div className="absolute inset-0 opacity-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#8b5cf6_0.5px,transparent_0.5px)] bg-[size:24px_24px]"></div>
       </div>

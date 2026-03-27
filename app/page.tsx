@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-black">
       <Navbar />
-      <main className="mx-auto max-w-7xl px-6">
+      <main>
         <Hero />
         <SectionDivider />
         <About />
